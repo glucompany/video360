@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="template" content="Interstitial 2.0.16">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clappr Video360</title>
+        
+        <style>
+            body{
+               margin: 0;
+                padding: 0;
+            }
+            #player{
+          
+                
+            }
+        </style>
+        
+        
+
+        
+ 
+    </head>
+    <body>
+        <!-- 1. Create a div where the player will be placed -->
+        
+        
+        
+        
+        <div id="player"></div>
+        
+        
+        
+        <!-- 2. Include Clappr and the 360 videoplayer plugin-->
+        <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+        <script src="https://cdn.rawgit.com/thiagopnts/clappr-video360/master/dist/clappr-video360.min.js"></script>
+
+        <!-- 3. Configure video player-->
+        <script>
+            // The URL to the 360 video player 
+            var Video360Url = 'https://github.com/glucompany/video360/blob/master/video.webm';
+            
+
+            // Configure your Clappr player.
+            var PlayerInstance = new Clappr.Player({
+                source: Video360Url,
+                plugins: {
+                    container: [Video360],
+                },
+                parentId: '#player', autoPlay:true, width:"400px", height:"288px", chromeless:"false",
+            });
+
+            // Important to disable the click to pause native plugin of clappr
+            // otherwise you won't be able to use correctly the player
+            PlayerInstance.getPlugin('click_to_pause').disable();
+           
+            
+            
+          
+        </script>
+        
+        
+        
+        
+       
+        
+    </body>
+</html>
